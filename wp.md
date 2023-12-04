@@ -1,4 +1,4 @@
-# Lê Trung Tín - CTV BCM - EHC Challenges
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/dbe32827-6b74-4737-af8d-0d5ef25ef37c)# Lê Trung Tín - CTV BCM - EHC Challenges
 
 Đây sẽ là toàn bộ writeup về challenge OverTheWire: Bandit của EHC giao trong kì thử thách đối với cộng tác viên ban chuyên môn của CLB
 
@@ -106,7 +106,127 @@ ls -la inhere
 
 <img width="539" alt="image-15" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/cc209a28-615b-4d52-86d7-860c99c18d6c">
 
-cd
+- với dạng này ta sẽ tìm file dựa vào  gợi ý 33 byte, user bandit7 , group bandit6
+
+
+```python
+find / -type f -user bandit7 -group  bandit6 2>/dev/null 
+```
+Command Explanation
+-  /: tim kiếm toàn bộ server ( / là thư mục root)
+-  -type : kiểu đây f ( file)
+- user : owned là user bandit7
+- group : thuộc group  bandit6
+- 2>/dev/null: là bộ lọc loại bỏ những thông báo error
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/8e820065-a655-4ee1-94c6-bcbb6033cc0a)
+
+*flag6:z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S*
+
+
+# level 7
+<img width="443" alt="image-17" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/685ef4a1-06b0-41de-9c34-e7259ce78a63">
+
+- check list file ta thấy file data.txt có từ khóa là millionth sau đó ta sẽ dùng câu lệnh 
+
+```python
+ cat data.txt | grep millionth 
+```
+Command Explanation
+- grep: tìm kiếm từ khóa
+- | : hoặc câu lệnh kép
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/43e18c02-f4bf-42d8-98be-1f7d5a8fdb82)
+
+*flag7:TESKZC0XvTetK0S9xNwm25STk5iWrBvP*
+
+
+# level 8
+<img width="556" alt="image-19" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/eff1f089-5b75-4ca3-be03-e6a7a12d23ca">
+- su
+
+# level 9
+<img width="697" alt="image-21" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/a8e29451-3bfb-4678-a74d-8f1d4da99b24">
+
+# level 10
+<img width="502" alt="image-23" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/5855f0ca-140c-4b95-85ac-1eb442c01ec5">
+
+
+# level 11
+<img width="752" alt="image-25" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/ce07fbf9-c609-4ed6-b023-e95737d4c431">
+
+# level 12
+<img width="1042" alt="image-27" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/d9b01dab-c79e-4e4a-be81-7d5174b3cf00">
+
+# level 13
+<img width="1042" alt="image-31" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/1f050c6a-4a02-42b4-a676-e6fa99f36473">
+
+
+# level 14
+<img width="647" alt="image-33" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/12c36edc-f55d-4bac-9c85-286cc1310bd9">
+
+
+# level 15
+<img width="1007" alt="image-36" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/69730adc-83c3-4103-967a-e0483537f5eb">
+
+
+# level 16
+<img width="1057" alt="image-37" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/c2992ae6-540a-48e8-88a9-493d31427bc0">
+
+
+# level 17
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/dafb838a-0a78-4b1a-bf8c-e550087491d6)
+
+
+# level 18
+<img width="857" alt="image-41" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/b699f303-3ec1-4cce-83c1-ec99519529d3">
+
+
+# level 19
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/add9ce07-f040-4d92-bc1f-e97a97070beb)
+
+# level 20
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e195c86a-af12-4749-a45a-3693c00597b5)
+
+# level 21
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/99b2723d-90a5-4375-9462-a4a0cc55f53a)
+
+
+# level 22
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b047fff9-50a1-485c-b710-bfdc699bdd4e)
+
+
+# level 23
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/7323d82f-c11b-455f-b2a0-55f4820fe9d5)
+
+
+# level 24
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/35b66d12-7513-4fb3-9928-c07557102c2d)
+
+
+# level 25
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/00b8cf77-3539-4d08-a39b-7820b8d00048)
+
+
+# level 26
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e2b100c8-1e0c-49a2-aacc-1b31fe4aaef0)
+
+# level 27
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e4029ee3-6913-46c3-b017-a795de60393f)
+
+# level 28
+
+# level 29
+
+# level 30
+
+# level 31
+
+# level 32
+
+# level 33
+
+# level 34
 
 
 
@@ -114,6 +234,8 @@ cd
 
 
 
+
+ 
 
 
 
