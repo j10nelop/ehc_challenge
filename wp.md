@@ -143,90 +143,133 @@ Command Explanation
 
 # level 8
 <img width="556" alt="image-19" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/eff1f089-5b75-4ca3-be03-e6a7a12d23ca">
-- su
+- ls check ta được file data.txt với yêu cầu tìm ra dòng văn bản duy nhất xuất hiện một :
+- sử dụng cat check được các kí tự của các text đang bị đảo => sắp xếp để tìm ra dòng password duy nhất :
+
+```python
+ sort data.txt | uniq -u 
+```
+Command Explanation
+- sort : sử dụng để sắp xếp các kí tự theo trình tự
+- uniq -u : uniq và -u (unique) chọn ra line khác biệt duy nhất 
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/d3d1c55d-504e-4237-9d14-10fb09aca15b)
+
+*flag8:EN632PlfYiZbn3PhVK3XOGSlNInNE00t*
 
 # level 9
 <img width="697" alt="image-21" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/a8e29451-3bfb-4678-a74d-8f1d4da99b24">
 
+
+*flag9: *
+
+
+
+
 # level 10
 <img width="502" alt="image-23" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/5855f0ca-140c-4b95-85ac-1eb442c01ec5">
+*flag10: *
 
 
 # level 11
 <img width="752" alt="image-25" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/ce07fbf9-c609-4ed6-b023-e95737d4c431">
 
+*flag11: *
+
 # level 12
 <img width="1042" alt="image-27" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/d9b01dab-c79e-4e4a-be81-7d5174b3cf00">
+*flag12: *
 
 # level 13
 <img width="1042" alt="image-31" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/1f050c6a-4a02-42b4-a676-e6fa99f36473">
+*flag13: *
 
 
 # level 14
 <img width="647" alt="image-33" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/12c36edc-f55d-4bac-9c85-286cc1310bd9">
+*flag14: *
 
 
 # level 15
 <img width="1007" alt="image-36" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/69730adc-83c3-4103-967a-e0483537f5eb">
+*flag15: *
 
 
 # level 16
 <img width="1057" alt="image-37" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/c2992ae6-540a-48e8-88a9-493d31427bc0">
 
+*flag16: *
 
 # level 17
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/dafb838a-0a78-4b1a-bf8c-e550087491d6)
-
+*flag17: *
 
 # level 18
 <img width="857" alt="image-41" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/b699f303-3ec1-4cce-83c1-ec99519529d3">
 
+*flag18: *
 
 # level 19
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/add9ce07-f040-4d92-bc1f-e97a97070beb)
+*flag19: *
 
 # level 20
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e195c86a-af12-4749-a45a-3693c00597b5)
+*flag20: *
 
 # level 21
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/99b2723d-90a5-4375-9462-a4a0cc55f53a)
+*flag21: *
 
 
 # level 22
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b047fff9-50a1-485c-b710-bfdc699bdd4e)
+*flag22: *
 
 
 # level 23
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/7323d82f-c11b-455f-b2a0-55f4820fe9d5)
+*flag23: *
 
 
 # level 24
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/35b66d12-7513-4fb3-9928-c07557102c2d)
+*flag24: *
 
 
 # level 25
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/00b8cf77-3539-4d08-a39b-7820b8d00048)
+*flag25: *
 
 
 # level 26
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e2b100c8-1e0c-49a2-aacc-1b31fe4aaef0)
+*flag26: *
 
 # level 27
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e4029ee3-6913-46c3-b017-a795de60393f)
+*flag27: *
 
 # level 28
 
+*flag28: *
 # level 29
+*flag29: *
 
 # level 30
+*flag30: *
 
 # level 31
+*flag31: *
 
 # level 32
+*flag32: *
 
 # level 33
+*flag33: *
 
 # level 34
+*flag34: *
 
 
 
