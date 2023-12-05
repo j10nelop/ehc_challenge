@@ -129,7 +129,7 @@ Command Explanation
  cat data.txt | grep millionth 
 ```
 Command Explanation
-- grep: tìm kiếm từ khóa
+- grep: bộ lọc trỏ đến vị trí cụ thể 
 - | : hoặc câu lệnh kép
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/43e18c02-f4bf-42d8-98be-1f7d5a8fdb82)
