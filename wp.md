@@ -2,10 +2,6 @@
 
 Đây sẽ là toàn bộ writeup về challenge OverTheWire: Bandit của EHC giao trong kì thử thách đối với cộng tác viên ban chuyên môn của CLB
 
-<img width="757" alt="image" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/8b63b780-5c27-4c99-8251-4055380812ff">
-
-bước 1: cài đặt và sử dụng ubuntu trên vmware workstation : 
-
 # level 0 
 
 <img width="1037" alt="image-2" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/9f4ee81e-8def-45c8-a044-a5e39597e2f5">
@@ -303,7 +299,7 @@ base64 -d : decrypt giải mã
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/48939f32-4132-402b-a17b-104a96837495)
 
-- tạo sshkey chứa key ssh đến bandit17 giống như level14
+- tạo sshkey chứa key ssh đến bandit17 giống như level 14
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/a28d78f8-bfdc-4326-bc85-d5a4f3bdd895)
 
@@ -344,29 +340,67 @@ base64 -d : decrypt giải mã
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/add9ce07-f040-4d92-bc1f-e97a97070beb)
 
-*flag19: *
+- Đề bài yêu cầu chúng ta chạy file *bandit20-do* nhưng lưu ý ở đây là phải sử dụng setuid. Khi sử dụng setuid để thực thi file, chúng ta sẽ trở thành chủ sở hữu tạm thời của file đó
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/0e14995b-4f0e-4cbc-888d-2422f2f70624)
+
+
+*flag19:VxCazJaVykI6W36BkBU0mJTCM8rR95XT*
 
 # level 20
+
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e195c86a-af12-4749-a45a-3693c00597b5)
-*flag20: *
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/967b1651-1eb4-48d7-90d2-17f1d8dd5d89)
+
+- connect nc to the suconnect on p 2000 pair the password and let the process run in the background with &
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/a63ff655-9c0d-42ba-ba6a-450079949ea6)
+
+*flag20:NvEJF7oVjkddltPSrdKEFOllh9V1IBcq*
 
 # level 21
+
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/99b2723d-90a5-4375-9462-a4a0cc55f53a)
-*flag21: *
+
+- Cronjob này chạy tệp /usr/bin/cronjob_bandit22.sh với tư cách là người dùng bandit22. Năm ngôi sao cho biết nó được chạy mỗi phút, mỗi ngày. Để biết chính xác những gì được thực thi, chúng ta cần xem tệp bash.
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e938ec09-8943-4667-b01f-c2beb08cdd80)
+
+
+*flag21:WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff*
 
 
 # level 22
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b047fff9-50a1-485c-b710-bfdc699bdd4e)
-*flag22: *
+
+- làm giống level 21
+- ta có tên tệp được tạo bởi dòng echo Tôi là người dùng $myname | md5sum | cut -d ' ' -f 1. Chúng ta chỉ cần thay thế $myname bằng bandit23
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/12453afc-4d99-4845-8a86-72f483d0ee3e)
+
+*flag22:QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G*
 
 
 # level 23
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/7323d82f-c11b-455f-b2a0-55f4820fe9d5)
-*flag23: *
+
+- giống level trước
+  
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/d26d3d8c-3e9a-4e03-990b-9b2368dc2cfe)
+
+- tạo một tệp trong thư mục 'tmp'. Điều này ngăn chặn việc xóa tệp sớm và một bản sao trong trường hợp có sự cố. Sau đó di chuyển tệp vào thư mục ‘/var/spool/bandit24’ và nó sẽ được thực thi.
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/af370afc-b493-4d81-b931-ec307dc6a3c2)
+
+*flag23:VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar*
 
 
 # level 24
+
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/35b66d12-7513-4fb3-9928-c07557102c2d)
+
+
 *flag24: *
 
 
@@ -398,12 +432,9 @@ base64 -d : decrypt giải mã
 # level 32
 *flag32: *
 
-# level 33
+# level 33  
+
 *flag33: *
-
-# level 34
-*flag34: *
-
 
 
 
