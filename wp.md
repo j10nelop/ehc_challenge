@@ -1,4 +1,4 @@
-# Lê Trung Tín - CTV BCM - EHC Challenges
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b6686eb7-f971-4df4-9314-4d1f509689c8)# Lê Trung Tín - CTV BCM - EHC Challenges
 
 Đây sẽ là toàn bộ writeup về challenge OverTheWire: Bandit của EHC giao trong kì thử thách đối với cộng tác viên ban chuyên môn của CLB
 
@@ -400,41 +400,161 @@ base64 -d : decrypt giải mã
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/35b66d12-7513-4fb3-9928-c07557102c2d)
 
+- brute forcing giải quyết yêu cầu đề bài
 
-*flag24: *
+- tạo script trên /tmp
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/fe2ece41-2af7-4f9d-a6e0-235bafa2a768)
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/ebd5e294-7741-4526-9bf4-da1a72b9bd46)
+
+*flag24:p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d*
 
 
 # level 25
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/00b8cf77-3539-4d08-a39b-7820b8d00048)
-*flag25: *
+
+- theo đề bài ta thấy The shell for user bandit26 is not /bin/bash nó /usr/bin/showtext
+- cat lên thì có hint ta sẽ ssh và thu nhỏ login để hiện more
+
+```
+ssh -i bandit26.sshkey -p 2220 -l bandit26 bandit.labs.overthewire.org
+```
+
+Ấn v chuyển sang vim sau đó nhập lệnh
+
+```
+:set shell =/bin/bash 
+:shell
+```
+
+Dùng lệnh cat để đọc flag trong file text.txt
+
+```
+cat /etc/bandit_pass/bandit26
+```
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/eab4bf80-eac2-4652-bc5a-8929b2f2fdab)
+
+
+*flag25:c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1*
 
 
 # level 26
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e2b100c8-1e0c-49a2-aacc-1b31fe4aaef0)
-*flag26: *
+
+-tương tự level 25 kết nối ssh r thu nhỏ terminal 
+
+```
+ssh -i bandit26.sshkey -p 2220 -l bandit26 bandit.labs.overthewire.org
+```
+
+Ấn v chuyển sang vim sau đó nhập lệnh
+
+```
+:set shell =/bin/bash 
+:shell
+```
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/36642029-9a5b-48a1-aa8a-3403494d15fa)
+
+
+*flag26:YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS*
 
 # level 27
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e4029ee3-6913-46c3-b017-a795de60393f)
-*flag27: *
+
+- download clone git resporitory bandit27
+  
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/f71b537c-376b-4135-96c1-9f35ad3e4c36)
+
+- cd repo cat readme dể xem flag
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/d338c405-c6e6-4433-b6f9-e6a4702ce9f4)
+
+*flag27:AVanL161y9rsbcJIsFHuw35rjaOM19nR*
 
 # level 28
 
-*flag28: *
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/0531342f-11ed-4edb-92ae-2f0a1d22c91e)
+
+- download git repo cat readme.md
+  
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/65669dc1-2441-4aa8-ae75-bc781c92754a)
+
+- check git log
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/db8b7fd6-27db-4780-99fd-00e043dce052)
+
+- 'fix info leak' có vẻ khác biệt show commit
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e02944ba-8ebe-4ecc-b92b-81eb2546648f)
+
+*flag28:tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S*
+
 # level 29
-*flag29: *
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/463879ab-6b64-4a44-94fd-40fce89a78db)
+- tương tự như bước trên
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/062b2ec5-fc2f-41f1-bf28-4523d48bb95c)
+
+- ta sẽ tiếp tục check các branch
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/30c629cd-6eec-4f20-8f7b-9be9749f9492)
+
+
+*flag29:xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS*
 
 # level 30
-*flag30: *
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b61d2a63-0a62-4ea7-a8c1-23d05abc4ca7)
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/6d08a3a3-c0eb-4536-a9e4-af6f6097b0e8)
+
+- ta có thể xem chi tiết bằng git tag
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b94d0128-27ea-4f88-bffb-f9823618eff8)
+
+
+*flag30:OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt*
 
 # level 31
-*flag31: *
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/17bf3b6c-c8ff-4e4f-a2dd-e398550d8c1b)
+
+-'README' nói rằng phải đẩy tệp vào kho lưu trữ
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/73bfddfc-231d-486f-add1-5ecb95fb9682)
+
+
+
+*flag31:rmCBvG56y58BXzv98yZGdO7ATVL5dW8y*
 
 # level 32
-*flag32: *
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/abdd58b7-eada-4f0b-a008-c28e7c265fc9)
+
+- ta có $0 là biến tham chiếu tới shell
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/0116c6fc-b6be-4021-9f55-66b114c958f6)
+
+- whoami thì ta thấy đang có tên là bandit33 => cat /etc/bandit_pass/bandit33
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/684dd891-0653-4bdc-a48a-e4bb8f92e185)
+
+
+*flag32:odHo63fHiFqcWWJG9rLiLDtPm45KzUKy*
 
 # level 33  
 
-*flag33: *
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/fe06c342-bce6-468f-82c3-473537d0a069)
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/f84cee93-c255-4672-a53b-5455edfc72b6)
+
+
+
+# endgame?
+
 
 
 
