@@ -1,4 +1,4 @@
-![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b6686eb7-f971-4df4-9314-4d1f509689c8)# Lê Trung Tín - CTV BCM - EHC Challenges
+# Lê Trung Tín - CTV BCM - EHC Challenges
 
 Đây sẽ là toàn bộ writeup về challenge OverTheWire: Bandit của EHC giao trong kì thử thách đối với cộng tác viên ban chuyên môn của CLB
 
