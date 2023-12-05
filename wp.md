@@ -1,4 +1,4 @@
-![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/dbe32827-6b74-4737-af8d-0d5ef25ef37c)# Lê Trung Tín - CTV BCM - EHC Challenges
+# Lê Trung Tín - CTV BCM - EHC Challenges
 
 Đây sẽ là toàn bộ writeup về challenge OverTheWire: Bandit của EHC giao trong kì thử thách đối với cộng tác viên ban chuyên môn của CLB
 
@@ -160,57 +160,190 @@ Command Explanation
 # level 9
 <img width="697" alt="image-21" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/a8e29451-3bfb-4678-a74d-8f1d4da99b24">
 
+- The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 
-*flag9: *
+```python
+ strings data.txt | grep =
+```
+- strings : lọc kí tự có thể đọc
+- grep : lọc các kí tự đã được filter "=" theo đề 
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b4d77740-6bba-4e08-865a-bf0273e6a083)
+
+
+*flag9:G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s*
 
 
 
 
 # level 10
 <img width="502" alt="image-23" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/5855f0ca-140c-4b95-85ac-1eb442c01ec5">
-*flag10: *
+
+- The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+
+```python
+ cat data.txt | base64 -d
+```
+- theo đề ta thấy đã bị encode the phương thức base64
+
+base64 -d : decrypt giải mã 
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/9e3ca7bc-fc85-4a04-99e7-c685b7ac909f)
+
+
+*flag10:6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM*
 
 
 # level 11
 <img width="752" alt="image-25" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/ce07fbf9-c609-4ed6-b023-e95737d4c431">
 
-*flag11: *
+-The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+-đề bài said các kí tự đã bị rotated 13 positions có nghĩa ROT13 
+
+```python
+  cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
+- tr: dịch chuyển các kí tự theo phép ROT13
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/4d585687-c540-4d88-a0ff-0e2f51d45361)
+
+*flag11:JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv*
 
 # level 12
+
 <img width="1042" alt="image-27" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/d9b01dab-c79e-4e4a-be81-7d5174b3cf00">
-*flag12: *
+
+- The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+- data.txt là hexadump file ta sẽ phân tích và tìm ra phương pháp nén của file
+
+- dịch chuyển đến thư mục /tmp có quyền chung cho phép tạo và chỉnh sửa file
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/485b1dea-cf2d-41ea-8828-763215adec3d)
+
+- qua search thì file data2 đã được nén theo gzip --> revert về origin file nén 
+
+```python
+  xxd -r data.txt > com_data.gz
+```
+- vert xong search thì file3 đã được nén theo bz --> liên tục đến file tar và bz cuối cùng
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/cae70a5b-0ba3-4adf-b230-b852e5d14d93)
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/c252d30a-9f85-4698-a933-0147a3ac0cfb)
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/f3a99c2b-3b1c-42e6-8424-71ea27dc865e)
+
+
+*flag12:wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw*
 
 # level 13
+
 <img width="1042" alt="image-31" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/1f050c6a-4a02-42b4-a676-e6fa99f36473">
-*flag13: *
+
+-sử dụng ssh kết nối với file sshkey.private  
+
+```python
+  ssh -i sshkey.private  bandit14@bandit.labs.overthewire.org -p 2220
+```
+
+```python
+  cat /etc/bandit_pass/bandit14
+```
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/beed2774-b518-4321-be94-c634c48d6873)
+
+
+*flag13:fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq*
 
 
 # level 14
 <img width="647" alt="image-33" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/12c36edc-f55d-4bac-9c85-286cc1310bd9">
-*flag14: *
+
+- sử dụng netcat kết nối localhost với -p 30000 , provide mật khẩu trước 
+
+```python
+  nc localhost 30000
+```
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/3b83495f-2af2-4a70-87cd-a4fb205783b6)
+
+
+*flag14:jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt*
 
 
 # level 15
 <img width="1007" alt="image-36" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/69730adc-83c3-4103-967a-e0483537f5eb">
-*flag15: *
+
+- The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
+
+- sử dụng openssl connect đến localhost p 30001
+
+```python
+  openssl s_client  -connect localhost:30001
+```
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/26788939-6e7b-4a09-98e6-1454f8be25eb)
+
+
+*flag15:JQttfApK4SeyHwDlI9SXGR50qclOAil1*
 
 
 # level 16
 <img width="1057" alt="image-37" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/c2992ae6-540a-48e8-88a9-493d31427bc0">
 
-*flag16: *
+- The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
+- dựa theo range 31000 to 32000 ta có thể sử dụng nmap để quét cổng và checking service port
+
+```python
+  nmap -sV localhost -p 31000-32000
+```
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/a981ea7d-677d-4740-9c0b-ca1df4ef66db)
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/48939f32-4132-402b-a17b-104a96837495)
+
+- tạo sshkey chứa key ssh đến bandit17 giống như level14
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/a28d78f8-bfdc-4326-bc85-d5a4f3bdd895)
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e8c4335f-72bf-4187-8ae6-e5ac1b9e4ffd)
+
+
+*flag16:VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e*
 
 # level 17
+
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/dafb838a-0a78-4b1a-bf8c-e550087491d6)
-*flag17: *
+
+- sử dụng diff dể tìm ra sự thay đổi giữa pass new và old => lấy pass new và các line còn lại là giống nhau nên có thể loại trừ 
+
+```python
+  diff [file1] [file2]
+```
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/16e7a396-bc1c-4c58-bcf8-79c89c7c1503)
+
+
+*flag17:hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg*
 
 # level 18
 <img width="857" alt="image-41" src="https://github.com/j10nelop/ehc_challenge/assets/152776722/b699f303-3ec1-4cce-83c1-ec99519529d3">
 
-*flag18: *
+- kết nối ssh với bandit18
+
+```python
+  ssh bandit18@bandit.labs.overthewire.org -p 2220 -t /bin/sh  
+```
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/661a2b67-78ed-4a30-9c9e-da30761a103f)
+
+*flag18:awhqfNnAbc1naukrpqDYcF95h7HoMTrC*
 
 # level 19
+
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/add9ce07-f040-4d92-bc1f-e97a97070beb)
+
 *flag19: *
 
 # level 20
