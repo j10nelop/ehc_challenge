@@ -12,8 +12,9 @@
 - install php8.1_fpm and web server apache2
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/969fff1d-1451-4b24-85e4-5f1f3eeaf2cb)
+# Lab 1: 
 
-# Task 1: write the php scripts ==> php information_config  
+## Task 1: write the php scripts ==> php information_config  
 - create dir name **ltt_php** and create **index.php** file 
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/00cbc278-3e84-4694-a764-7ba54fa024d3)
