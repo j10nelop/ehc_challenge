@@ -1,6 +1,6 @@
 # PHP programing
 
-## prepare
+## Prepare
 - download vmware and using ubuntu_server-22.04:
   
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/1dc01944-110c-40eb-ba76-029dcf4839c9)
