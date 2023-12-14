@@ -96,5 +96,64 @@ $$ Task 2: create an calc php
 # Lab 2
 ## task 1: create an ax+b =0 Equation php
 
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/324fef77-9a31-4257-acfb-05568c10726b)
+
+
+- php code
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The_Equation</title>
+    <h1>Ax+B=0 Equation</h1>
+</head>
+<body>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
+         <input type="number" name = "a" placeholder="a" style="width: 50px;;"> x+
+         <input type="number" name = "b" placeholder="b" style="width: 50px;"> = 0<br><br>
+         <input type="submit" value="Submit" name = "sub">
+        
+        
+    </form>
+        
+        <?php  
+            if(isset($_POST['sub'])){
+                $a = $_POST['a'];
+                $b = $_POST['b'];
+                
+            if($a != 0){
+                if($b != 0){
+                    $result = -$b/$a;
+                    echo "phuong trinh co nghiem la  x =  $result";
+                }
+                else{
+                    echo "phuong trinh vo so nghiem";
+                }
+
+            }
+            else {
+                echo "phuong trinh vo nghiem";
+            }
+
+            }
+        ?>
+
+        
+</body>
+</html>
+
+
+
+ 
+
+```
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/c60c796d-c71d-4d22-935e-a60d57227b1d)
+
+## task 2: create php calc sum continuous 
+
+- php code 
 
 
