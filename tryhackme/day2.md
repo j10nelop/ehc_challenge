@@ -4,7 +4,8 @@
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/17a8e23e-f188-4967-bba3-e4000fc32462)
 
-- How many packets were captured (looking at the PacketNumber)?
+1.How many packets were captured (looking at the PacketNumber)?
+- chạy packet trong code 
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/74add41b-f3f2-4ca6-ac67-35f9fe47bb49)
 
@@ -18,4 +19,12 @@
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/c9800361-e9d3-4b5d-b052-d2a0d52d6789)
 
-- 
+2.What IP address sent the most amount of traffic during the packet capture?
+
+- ip add sent from source ==> most amount
+
+
+```
+ df.groupby(['Source']).size()
+```
+ 
