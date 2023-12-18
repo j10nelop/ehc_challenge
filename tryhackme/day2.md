@@ -21,10 +21,27 @@
 
 2.What IP address sent the most amount of traffic during the packet capture?
 
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/3af325df-34ee-46ff-8405-ee04cb60a4f0)
+
 - ip add sent from source ==> most amount
 
 
 ```
- df.groupby(['Source']).size()
+ df.groupby(['Source']).size().sort_values(ascending=Flase)
 ```
- 
+= > 15 
+- ouput
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/e3957481-b10e-406b-bcf2-78b0129fa31d)
+
+
+3. What was the most frequent protocol?
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/c9c62270-0350-4bda-b280-212b38262764)
+
+```
+ df.groupby(['Protocol']).size()
+```
+= 27 
+
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/a8c9dcdf-e980-46d7-acf2-14c84c8423b5)
