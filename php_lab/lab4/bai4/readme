@@ -1,0 +1,12 @@
+Bài 1:
+
+Xây dựng tính năng upload và hiển thị hình ảnh được upload.
+
+Bài 2:
+
+Thực hiện:
+
+    Chỉ cho phép upload file có đuôi .jpg, .jpeg, .png hoặc .gif.
+    Thông báo lỗi khi người dùng chọn loại file khác.
+
+
