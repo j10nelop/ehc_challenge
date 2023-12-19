@@ -1,7 +1,7 @@
 # Lab 2
 ## task 1: create an ax+b =0 Equation php
 
-![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/324fef77-9a31-4257-acfb-05568c10726b)
+
 
 
 - php code
@@ -15,47 +15,33 @@
     <h1>Ax+B=0 Equation</h1>
 </head>
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
-         <input type="number" name = "a" placeholder="a" style="width: 50px;;"> x+
-         <input type="number" name = "b" placeholder="b" style="width: 50px;"> = 0<br><br>
-         <input type="submit" value="Submit" name = "sub">
-        
-        
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <input type="text" name="a" placeholder="a" style="width: 50px;"> x +
+        <input type="text" name="b" placeholder="b" style="width: 50px;"> = 0<br><br>
+        <input type="submit" value="Submit" name="sub">
     </form>
         
-        <?php  
-            if(isset($_POST['sub'])){
-                $a = $_POST['a'];
-                $b = $_POST['b'];
-                
+    <?php  
+        if(isset($_POST['sub'])){
+            $a = $_POST['a'];
+            $b = $_POST['b'];
+            
             if($a != 0){
-                if($b != 0){
-                    $result = -$b/$a;
-                    echo "phuong trinh co nghiem la  x =  $result";
-                }
-                else{
-                    echo "phuong trinh vo so nghiem";
-                }
-
+                $result = -$b / $a;
+                echo "The equation has a solution: x = $result";
+            } elseif($b != 0) {
+                echo "The equation has no solution";
+            } else {
+                echo "The equation has infinite solutions";
             }
-            else {
-                echo "phuong trinh vo nghiem";
-            }
-
-            }
-        ?>
-
-        
+        }
+    ?>
 </body>
 </html>
-
-
-
- 
-
 ```
 
-![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/c60c796d-c71d-4d22-935e-a60d57227b1d)
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/df94d2cd-4a46-48ef-9f3a-def6cc49c042)
+
 
 ## task 2: create php calc sum continuous 
 
@@ -71,30 +57,31 @@
     <h1>Sum 1 -> n </h1>
 </head>
 <body>
-    <form action="<?php ['PHP_SELF']; ?>" method = "post">
-         <label>Enter n</label>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <label>Enter n</label>
         <input type="text" name="n" placeholder="n">
-        <input type="submit" value="calculate" name = 'sub'>       
-        
+        <input type="submit" value="calculate" name="sub">       
     </form>
         
-        <?php  
-            if(isset($_POST['sub'])){
-                $n =  $_POST['n'];
-                $sum = 0 ;
-                
-                if(is_numeric($n)){
-                    for($i = 0 ; $i <= $n ;$i++){
-                        $sum += $i;
-                    }
+    <?php  
+        if(isset($_POST['sub'])){
+            $n =  $_POST['n'];
+            $sum = 0 ;
+            
+            // Kiểm tra n có phải là số nguyên dương không
+            if(is_numeric($n) && $n > 0){
+                for($i = 1; $i <= $n; $i++){
+                    $sum += $i;
                 }
-                echo "sum: $sum";
+                echo "Sum: $sum";
+            } else {
+                echo "Please enter a positive integer!";
             }
-        ?>
-
-        
+        }
+    ?>
 </body>
 </html>
+
 ```
 
 ![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/b720ac40-1a46-428f-a1ae-d6d92c13b53f)
