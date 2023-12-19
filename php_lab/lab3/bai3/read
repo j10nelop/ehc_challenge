@@ -1,0 +1,3 @@
+Bài 3:
+
+Sử dụng form Login như trên, thực hiện lưu thông tin người dùng vào cookie nếu người dùng lựa chọn “Remember Me” khi đăng nhập thành công. Hiển thị cookie nếu đã lưu thông tin.
