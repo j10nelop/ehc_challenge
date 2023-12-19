@@ -32,7 +32,7 @@
 
 ## Task 2: create an calc php 
 
-![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/7f4e9025-88e2-4b18-a827-8082b4662932)
+
 
 
 - php code
@@ -44,52 +44,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+
 </head>
 <body>
-    <h1>Calculator Machine</h1>
-    <form method="post" action="index.php">
-        <label>Enter number 1:</label><br>
-        <input type="number" name="num1"><br>
-     
-        <label>Enter number 2:</label><br>
-        <input type="number" name="num2"><br>
+     <h1>calculator</h1>
+        <form action="" method="post">
+             Enter a: <input type="text" name="a"><br><br>
 
-        <input type="submit" value="Submit">  
-          
-    </form>
+             Enter b: <input type="text" name= "b"><br><br>
+
+            <input type="submit" value="calculate" name="sub" style=width:60px;>
+        </form>
+        
+        <?php
+    // xử lý khi request được gửi đi bằng phương thức Post 
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
          
-    <?php
-// xử lý khi request được gửi đi bằng phương thức Post 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-         
-            //lay gia tri cua num1 va num2 từ form 
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
-        // kiẻm tra số hay không
-        if(is_numeric($num1) && is_numeric($num2)){
-             $addition = $num1 + $num2;
-             $subtraction = $num1 - $num2;
-             $multiple = $num1 * $num2;
-        }
-            // điều kiện chia mẫu khác 0
+        // Lấy giá trị của num1 và num2 từ form 
+        $num1 = $_POST['a'];
+        $num2 = $_POST['b'];
+
+        // Kiểm tra nếu không phải là số, thì thông báo lỗi
+        if(is_numeric($num1) || !is_numeric($num2)){
+            echo "Please enter valid numbers!";
+        } else {
+            $addition = $num1 + $num2;
+            $subtraction = $num1 - $num2;
+            $multiple = $num1 * $num2;
+
+            // Kiểm tra nếu num2 không bằng 0 trước khi thực hiện phép chia
             if($num2 != 0 ){
                 $div = $num1 / $num2;
-                echo "add= $addition<br>";
-               echo  "Subtraction= $subtraction<br>";
-               echo  "mutiple = $multiple<br>";
-               echo "div = $div<br>";
-               
+                echo "add = $addition<br>";
+                echo "Subtraction = $subtraction<br>";
+                echo "Multiple = $multiple<br>";
+                echo "Div = $div<br>";
+            } else { 
+                echo "Can't divide by zero";
             }
-            else{ 
-                echo "can't div";
-            }
-         } 
+        }
+    } 
     ?>
+        
 </body>
 </html>
-
 ```
 
-![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/018873e0-e168-4d48-a49b-c2c6772b6c37)
+![image](https://github.com/j10nelop/ehc_challenge/assets/152776722/70ef8262-7620-47f4-ad09-242733f54b53)
+
+
+
 
 
