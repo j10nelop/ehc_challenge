@@ -13,7 +13,7 @@
             echo "<h2>Welcome " . ucfirst($username). " to main page!</h2>";
         }
         elseif($username === 'user'){
-            echo "<h2>Welcome " . ucfirst($username). "to  page!</h2>";
+            echo "<h2>Welcome " . ucfirst($username). " to page!</h2>";
         }
     }
     else{
