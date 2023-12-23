@@ -25,7 +25,7 @@
     
     <?php
     $uploadDir = 'uploads/';
-    if ($_SERVER['REQUEST_METHOD'] === "POST") {
+   if(isset($_FILES['file']) && $_FILES['file']['error'] === 0){
         $allow = ['jpg', 'jpeg', 'png', 'gif'];
         if (isset($_FILES['file'])) {
             if (!file_exists($uploadDir) && !is_dir($uploadDir)) {
