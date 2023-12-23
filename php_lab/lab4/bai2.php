@@ -36,7 +36,7 @@
 <body>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
         <h1>UPLOAD an Image</h1>
-        <input type="file" name="file" id="myfile" style="display:none;">
+        <input type="file" name="file" id="myfile" style="display:none;" require>
         <label for="myfile" class="upload-custom">Choose File</label>
         <button type="submit">Upload</button>
     </form>
